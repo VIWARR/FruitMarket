@@ -1,4 +1,4 @@
-package by.VIWARR.FruitMarket.Models;
+package by.VIWARR.FruitMarket.models;
 
 import jakarta.persistence.*;
 
