@@ -2,6 +2,7 @@ package by.VIWARR.FruitMarket.services;
 
 import by.VIWARR.FruitMarket.models.Product;
 import by.VIWARR.FruitMarket.repositories.ProductRepository;
+import by.VIWARR.FruitMarket.util.ProductNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
@@ -29,5 +30,9 @@ public class ProductService {
         productRepository.save(product);
     }
 
-
+    public Product findById(int id) {
+        return productRepository.findById(id).orElseThrow(
+                ProductNotFoundException::new
+        );
+    }
 }
